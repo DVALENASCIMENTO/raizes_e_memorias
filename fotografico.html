@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Capítulo Fotográfico</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav id="menu">
+    <a href="introducao.html">Introdução</a>
+    <a href="mapa-geral.html">Mapa Genealógico Nascimento & Vale</a>
+    <a href="cap1.html">Capítulo 1 – Núcleo Familiar</a>
+    <a href="cap2.html">Capítulo 2 – Geração dos Pais</a>
+    <a href="cap3.html">Capítulo 3 – Ascendência Nascimento</a>
+    <a href="cap3a.html">Capítulo 3A – Ascendência Alves</a>
+    <a href="cap4.html">Capítulo 4 – Ascendência Rocha</a>
+    <a href="cap5.html">Capítulo 5 – Ascendência Vale</a>
+    <a href="cap6.html">Capítulo 6 – Ascendência Bentes</a>
+    <a href="fotografico.html">Capítulo Fotográfico</a>
+    <a href="especial.html">Capítulo Especial</a>
+    <a href="mapa-nascimento.html">Mapa Genealógico Nascimento</a>
+    <a href="mapa-bentes.html">Mapa Genealógico Bentes Vale</a>
+    <a href="conclusao.html">Conclusão</a>
+  </nav>
+</header>
+
+<section class="capitulo">
+  <h1>Capítulo Fotográfico</h1>
+  <p>Imagens que preservam o tempo, os rostos e os lugares que moldaram nossa história.</p>
+
+  <div class="carrossel">
+    <button onclick="slide(-1)">❮</button>
+    <div class="slide">
+      <img src="img/fotos/foto1.jpg">
+      <span>Memórias familiares</span>
+    </div>
+    <button onclick="slide(1)">❯</button>
+  </div>
+
+  <a href="especial.html">
+    <button class="proximo">Capítulo Especial →</button>
+  </a>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>

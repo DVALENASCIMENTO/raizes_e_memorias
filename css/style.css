@@ -1,0 +1,251 @@
+/* =========================
+   RESET E BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    #1f2d1f,
+    #2e3b2e,
+    #3b2f1e
+  );
+  color: #2b1f14;
+  min-height: 100vh;
+}
+
+/* =========================
+   POPUP / CAPA
+========================= */
+#popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 10, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  text-align: center;
+  max-width: 90%;
+}
+
+.popup-content img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.popup-content button {
+  margin-top: 20px;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #6b4f2c, #9c7a42);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.popup-content button:hover {
+  background: linear-gradient(to right, #9c7a42, #caa45a);
+}
+
+/* =========================
+   HEADER / HAMBURGUER
+========================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(25, 35, 25, 0.95);
+  padding: 12px 16px;
+}
+
+.hamburger {
+  font-size: 28px;
+  color: #d9c08b;
+  cursor: pointer;
+}
+
+/* =========================
+   MENU
+========================= */
+#menu {
+  display: none;
+  flex-direction: column;
+  background: #f4ecd8;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#menu a {
+  padding: 14px;
+  text-decoration: none;
+  color: #3b2f1e;
+  border-bottom: 1px solid #d6c6a5;
+}
+
+#menu a:hover {
+  background: #e7dcc3;
+}
+
+/* =========================
+   CONTEÚDO DO CAPÍTULO
+========================= */
+.capitulo {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #fdf6e3;
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.capitulo h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3b2f1e;
+}
+
+.capitulo p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+/* =========================
+   BRASÃO
+========================= */
+.brasao {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 160px;
+}
+
+/* =========================
+   CARROSSEL
+========================= */
+.carrossel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 10px;
+}
+
+.carrossel button {
+  background: #6b4f2c;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slide {
+  text-align: center;
+  max-width: 600px;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.slide span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #4a3a26;
+  font-style: italic;
+}
+
+/* =========================
+   BOTÃO PRÓXIMO
+========================= */
+.proximo {
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 36px;
+  background: linear-gradient(to right, #4f6b3c, #7b9c5a);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.proximo:hover {
+  background: linear-gradient(to right, #7b9c5a, #a8c97b);
+}
+
+/* =========================
+   MAPAS
+========================= */
+.mapa {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+}
+
+.mapa-img {
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .capitulo {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .capitulo h1 {
+    font-size: 1.8rem;
+  }
+
+  .hamburger {
+    font-size: 24px;
+  }
+
+  .brasao {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .capitulo h1 {
+    font-size: 1.5rem;
+  }
+
+  .capitulo p {
+    font-size: 0.95rem;
+  }
+
+  .popup-content img {
+    max-width: 300px;
+  }
+}
