@@ -20,43 +20,182 @@ body {
 }
 
 /* =========================
-   POPUP / CAPA
+   POPUP CAPA – AJUSTE FINAL
 ========================= */
 #popup {
   position: fixed;
   inset: 0;
-  background: rgba(10, 15, 10, 0.95);
+  background: radial-gradient(circle, #0c130c 0%, #020402 85%);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
-.popup-content {
-  text-align: center;
-  max-width: 90%;
-}
-
-.popup-content img {
+.popup-capa {
+  position: relative;
   width: 100%;
-  max-width: 420px;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  max-width: 1100px;   /* 👈 LIMITE IDEAL PARA DESKTOP */
+  max-height: 85vh;    /* 👈 EVITA FICAR ALTA DEMAIS */
+  aspect-ratio: 16 / 10; /* 👈 PROPORÇÃO ELEGANTE */
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.95);
 }
 
-.popup-content button {
-  margin-top: 20px;
-  padding: 14px 40px;
+
+.popup-capa img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* NÃO CORTA IMAGEM */
+  display: block;
+}
+
+@media (min-width: 1400px) {
+  .popup-capa {
+    max-width: 1000px;
+    max-height: 80vh;
+  }
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* CONTEÚDO SOBE */
+  text-align: center;
+  padding: 28px 22px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+
+/* =========================
+   TOPO – TÍTULO E SUBTÍTULO
+========================= */
+.topo h1 {
+  font-size: 1.5rem;
+  color: #f3e6b8;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.topo h2 {
+  font-size: 1rem;
+  color: #e0cf98;
+  font-style: italic;
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* =========================
+   BOTÃO – MAIS PRA CIMA
+========================= */
+.botao-centro {
+  margin-top: 6px;               /* BOTÃO SOBE */
+}
+
+.btn-viajar {
+  padding: 5px 52px;
   font-size: 1.1rem;
-  background: linear-gradient(to right, #6b4f2c, #9c7a42);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(140, 105, 45, 0.55);
+  backdrop-filter: blur(6px);
   color: #fff;
-  border: none;
-  border-radius: 30px;
   cursor: pointer;
   letter-spacing: 1px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  animation: pulsar 2.5s infinite ease-in-out;
 }
 
-.popup-content button:hover {
-  background: linear-gradient(to right, #9c7a42, #caa45a);
+.btn-viajar:hover {
+  background: rgba(185, 145, 65, 0.75);
+}
+
+/* =========================
+   ANIMAÇÃO BOTÃO PISCANDO
+========================= */
+@keyframes pulsar {
+  0% {
+    box-shadow: 0 0 15px rgba(185, 145, 65, 0.4);
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(220, 180, 90, 0.9);
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(185, 145, 65, 0.4);
+    opacity: 0.75;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   RODAPÉ – AUTOR FIXADO EMBAIXO
+========================= */
+.rodape {
+  margin-top: auto;              /* EMPURRA PARA O FUNDO */
+}
+
+.rodape p {
+  font-family: "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 0.8rem;
+  color: #f1e4b6;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .popup-capa {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .topo h1 {
+    font-size: 2.2rem;
+  }
+
+  .topo h2 {
+    font-size: 1.25rem;
+  }
+
+  .btn-viajar {
+    padding: 12px 40px;
+  }
+
+  .rodape p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .topo h1 {
+    font-size: 1.8rem;
+  }
+
+  .topo h2 {
+    font-size: 1.15rem;
+  }
+
+  .botao-centro {
+    margin-top: 4px;
+  }
 }
 
 /* =========================
