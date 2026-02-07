@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Territórios da Memória</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav id="menu">
+    <a href="introducao.html">Introdução</a>
+    <a href="mapa-geral.html">Mapa Genealógico Nascimento & Vale</a>
+    <a href="cap1.html">Capítulo 1 – Núcleo Familiar</a>
+    <a href="cap2.html">Capítulo 2 – Geração dos Pais</a>
+    <a href="cap3.html">Capítulo 3 – Ascendência Nascimento</a>
+    <a href="cap3a.html">Capítulo 3A – Ascendência Alves</a>
+    <a href="arvore-alves-nascimento.html">Árvore Genealógica Família Alves Nascimento</a>
+    <a href="cap4.html">Capítulo 4 – Ascendência Rocha</a>
+    <a href="arvore-rocha.html">Árvore Genealógica Família Rocha</a>
+    <a href="cap5.html">Capítulo 5 – Ascendência Vale</a>
+    <a href="arvore-vale.html">Árvore Genealógica Família Vale</a>
+    <a href="cap5a.html">Capítulo 5a – Riqueza e Pioneirismo em Tarauacá</a>
+    <a href="cap6.html">Capítulo 6 – Ascendência Bentes</a>
+    <a href="cap6a.html">Capítulo 6a – Raimunda Maria da Silva Bentes</a>
+    <a href="cap6b.html">Capítulo 6B – Pedro de Souza Bentes II</a>
+    <a href="cap6c.html">Capítulo 6C – Ana da Silva Bentes (Nikita)</a>
+    <a href="cap6d.html">Capítulo 6D – Pedro de Souza Bentes I (Patriarca)</a>
+    <a href="arvore-bentes.html">Árvore Genalógica da Família Bentes</a>
+    <a href="cap6e.html">Vestígios Históricos da Família Bentes no Pará</a>
+    <a href="territorios-da-memoria.html">Territórios da Memória</a>
+    <a href="especial.html">Capítulo Especial</a>
+    <a href="mapa-nascimento.html">Mapa Genealógico Família Nascimento</a>
+    <a href="mapa-bentes.html">Mapa Genealógico Família Bentes Vale</a>
+    <a href="conclusao.html">Conclusão</a>
+  </nav>
+</header>
+
+<section class="capitulo">
+  <h1>Territórios da Memória</h1>
+<p>
+    Os lugares também fazem parte da história familiar. As imagens a seguir
+    retratam cidades, comunidades e paisagens onde a família
+    <strong>Nascimento &amp; Vale</strong> lançou suas raízes.
+  </p>
+
+  <p>
+    Esses territórios não são apenas pontos geográficos, mas
+    <strong>cenários vivos de trabalho, convivência, fé e formação familiar</strong>.
+    Foi nesses espaços que se construíram lares, se transmitiram valores e se
+    moldaram trajetórias que atravessaram gerações.
+  </p>
+
+  <p>
+    Cada cidade, cada comunidade ribeirinha e cada paisagem registrada carrega
+    marcas de experiências compartilhadas — do esforço diário ao convívio
+    comunitário, das celebrações religiosas aos desafios impostos pela distância
+    e pela natureza amazônica.
+  </p>
+
+  <p>
+    Assim, os lugares aqui apresentados integram-se à memória da família como
+    testemunhas silenciosas de sua história, reforçando o sentimento de
+    pertencimento e a ligação profunda entre território, identidade e legado
+    familiar.
+  </p>
+  <!-- Escolha dos lugares -->
+<div class="lugares-lista">
+  <button onclick="mostrarLugar('manaus')">Manaus / AM</button>
+  <button onclick="mostrarLugar('cambixe')">Cambixe – Careiro da Várzea / AM</button>
+  <button onclick="mostrarLugar('varrevento')">Varre Vento – Itacoatiara / AM</button>
+  <button onclick="mostrarLugar('marimba')">Comunidade do Marimba / AM</button>
+  <button onclick="mostrarLugar('tarauaca')">Tarauacá / AC</button>
+  <button onclick="mostrarLugar('curua')">Curuá / PA</button>
+  <button onclick="mostrarLugar('alenquer')">Alenquer / PA</button>
+  <button onclick="mostrarLugar('hoteltropical')">Hotel Tropical – Manaus / AM</button>
+</div>
+
+<!-- Área dinâmica -->
+<div id="conteudo-lugar" class="conteudo-lugar" style="display:none;">
+
+  <!-- Carrossel -->
+  <div class="carrossel">
+    <button onclick="mudarSlide(-1)">❮</button>
+    <div class="slide">
+      <img id="imagem-slide" src="">
+      <span id="legenda-slide"></span>
+    </div>
+    <button onclick="mudarSlide(1)">❯</button>
+  </div>
+
+  <!-- Google Maps -->
+  <div class="mapa">
+    <iframe
+      id="mapa-google"
+      src=""
+      width="100%"
+      height="350"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+
+</div>
+
+
+  <a href="especial.html">
+    <button class="proximo">Capítulo Especial →</button>
+  </a>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>
