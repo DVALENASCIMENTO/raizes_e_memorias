@@ -179,3 +179,22 @@ function mudarSlide(direcao) {
 
   atualizarSlide();
 }
+
+function mostrarLugar(nome) {
+  lugarAtual = lugares[nome];
+  slideAtual = 0;
+
+  const conteudo = document.getElementById("conteudo-lugar");
+  conteudo.style.display = "block";
+
+  atualizarSlide();
+  document.getElementById("mapa-google").src = lugarAtual.mapa;
+
+  /* 🔽 Scroll suave até as fotos */
+  setTimeout(() => {
+    conteudo.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 100);
+}
