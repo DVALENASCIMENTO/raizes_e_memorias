@@ -98,8 +98,17 @@ window.addEventListener("beforeunload", () => {
 let lugares = {
   manaus: {
     fotos: [
-      { img: "img/manaus/1.jpg", legenda: "Manaus – Centro Histórico" },
-      { img: "img/manaus/2.jpg", legenda: "Encontro das Águas" }
+      { img: "img/manaus/5af09c50b6e34.jpg", legenda: "Palácio Rio Negro" },
+      { img: "img/manaus/5af09c50dede5.jpg", legenda: "Barcos no Porto de Manaus" },
+      { img: "img/manaus/668-120212-manaus-centrohistoricodemanaus-foto-wagnerfontoura-licenca-cc-by-2-0gr.jpg", legenda: "Centro Histórico de Manaus" },
+      { img: "img/manaus/668-120214-manaus-igrejadesaosebastiaono-centrohistorico-foto-wagner-fontoura-licenca-cc-by-2-0gr.jpg", legenda: "Igreja São Sebastião" },
+      { img: "img/manaus/64356f28-e971-47ec-b24c-e96f6b2d6a0f.jpg", legenda: "Ponte sobre o Rio Negro" },
+      { img: "img/manaus/arena-fotografia-icaro.jpg", legenda: "Arena" },
+      { img: "img/manaus/Port_of_Manaus,_Brazil.jpg", legenda: "Porto de Manaus" },
+      { img: "img/manaus/Praia_da_Ponta_Negra_(Manaus).jpg", legenda: "Praia da Ponta Negra" },
+      { img: "img/manaus/size_800_5-atracoes-imperdiveis-em-manaus-321dace1.jpg", legenda: "Teatro Amazonas" },
+      { img: "img/manaus/teatro manaus.jpg", legenda: "Teatro Amazonas" },
+      { img: "img/manaus/chafariz.jpg", legenda: "Chafariz da Praça da Matriz" },
     ],
     mapa: "https://www.google.com/maps?q=Manaus+AM&output=embed"
   },
