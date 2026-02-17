@@ -661,3 +661,71 @@ header {
 html {
   scroll-behavior: smooth;
 }
+
+.contato-botoes {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-contato {
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+/* WhatsApp */
+.whatsapp {
+  background: #25D366;
+}
+
+.whatsapp:hover {
+  background: #1ebe5b;
+  transform: scale(1.05);
+}
+
+/* Email */
+.email {
+  background: #1D272F;
+}
+
+.email:hover {
+  background: #000000;
+  transform: scale(1.05);
+}
+
+/* Animação de pulsar */
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+  }
+}
+
+.btn-contato {
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.3s ease;
+  display: inline-block;
+
+  /* 🔥 Animação aplicada */
+  animation: pulsar 2s infinite;
+}
