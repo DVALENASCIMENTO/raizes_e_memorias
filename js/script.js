@@ -294,3 +294,41 @@ function mostrarLugar(nome) {
     });
   }, 100);
 }
+
+// Timeline animada subindo suavemente
+const container = document.querySelector('.timeline-container');
+let scrollPosition = 0;
+const speed = 0.7; // ajuste da velocidade (quanto menor, mais rápido)
+
+// Função para ativar fade-in dos itens
+function fadeInItems() {
+  const items = document.querySelectorAll('.timeline-item');
+  items.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
+    const containerTop = container.getBoundingClientRect().top;
+    if (itemTop - containerTop < container.offsetHeight - 50) {
+      item.classList.add('active');
+    }
+  });
+}
+
+// Função de scroll contínuo
+function animateTimeline() {
+  fadeInItems();
+
+  scrollPosition += speed;
+  if (scrollPosition >= container.scrollHeight - container.offsetHeight) {
+    scrollPosition = 0; // reinicia suavemente ao final
+  }
+  container.scrollTop = scrollPosition;
+
+  requestAnimationFrame(animateTimeline);
+}
+
+animateTimeline();
+
+// Menu hamburger (se houver)
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
