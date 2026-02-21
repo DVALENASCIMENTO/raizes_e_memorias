@@ -5,14 +5,10 @@ function toggleMenu() {
   const menu = document.getElementById("menu");
   if (!menu) return;
 
-  if (menu.style.display === "flex") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "flex";
-  }
+  menu.classList.toggle("show");
 }
 
-/* Fecha o menu ao clicar fora (mobile friendly) */
+/* Fecha ao clicar fora */
 document.addEventListener("click", function (e) {
   const menu = document.getElementById("menu");
   const hamburger = document.querySelector(".hamburger");
@@ -20,7 +16,7 @@ document.addEventListener("click", function (e) {
   if (!menu || !hamburger) return;
 
   if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-    menu.style.display = "none";
+    menu.classList.remove("show");
   }
 });
 
