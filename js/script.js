@@ -328,3 +328,24 @@ function toggleMenu() {
   const menu = document.getElementById('menu');
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
+
+document.addEventListener("click", function(e){
+
+    /* ================= TOGGLE ================= */
+    if(e.target.classList.contains("toggle")){
+
+        const parentLi = e.target.closest("li");
+        const childUl = parentLi.querySelector(":scope > ul");
+
+        if(!childUl) return;
+
+        if(childUl.style.maxHeight){
+            childUl.style.maxHeight = null;
+            e.target.textContent = "+";
+        }else{
+            childUl.style.maxHeight = childUl.scrollHeight + "px";
+            e.target.textContent = "-";
+        }
+    }
+});
+

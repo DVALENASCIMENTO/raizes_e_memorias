@@ -878,3 +878,65 @@ html {
     margin-top: 15px;
   }
 }
+
+/* ================= BOTÃO ACESSAR ÁRVORE ================= */
+
+.acesso-arvore{
+    text-align:center;
+    margin:20px 0 35px 0;
+}
+
+.acesso-arvore a{
+    display:inline-block;
+    background: linear-gradient(135deg,#CFAF45,#f4d97a);
+    color:#000;
+    font-weight:600;
+    padding:12px 20px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:clamp(14px,3.5vw,18px);
+    transition:all 0.3s ease;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.acesso-arvore a:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+}
+
+.acesso-arvore a:active{
+    transform:scale(0.96);
+}
+
+/* ================= BOTÃO FLUTUANTE DO GRUPO ================= */
+
+.btn-grupo-email{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg,#1B3A5B,#CFAF45);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 9999;
+    font-size: 14px;
+}
+
+.btn-grupo-email:hover{
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Responsivo */
+@media (max-width:768px){
+    .btn-grupo-email{
+        padding:12px 16px;
+        font-size:13px;
+        bottom:15px;
+        right:15px;
+    }
+}
