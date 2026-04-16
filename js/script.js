@@ -23,31 +23,59 @@ document.addEventListener("click", function (e) {
 /* =========================
    CARROSSEL DE FOTOS
 ========================= */
+
+/* ❌ REMOVIDO USO GLOBAL
 let slideIndex = 0;
+*/
 
-function slide(direction) {
-  const slides = document.querySelectorAll(".slide img");
-  const captions = document.querySelectorAll(".slide span");
+/* ✅ ALTERADO — agora cada carrossel é independente */
+function slide(direction, btn = null) {
+  let carrossel;
 
-  if (slides.length === 0) return;
+  if (btn) {
+    carrossel = btn.closest(".carrossel");
+  } else {
+    // pega o primeiro carrossel visível (fallback)
+    carrossel = document.querySelector(".carrossel:hover") || document.querySelector(".carrossel");
+  }
 
-  slideIndex += direction;
+  const slides = carrossel.querySelectorAll("img");
+  const captions = carrossel.querySelectorAll("span");
 
-  if (slideIndex < 0) slideIndex = slides.length - 1;
-  if (slideIndex >= slides.length) slideIndex = 0;
+  if (!carrossel.index) {
+    carrossel.index = 0;
+  }
+
+  carrossel.index += direction;
+
+  if (carrossel.index < 0) carrossel.index = slides.length - 1;
+  if (carrossel.index >= slides.length) carrossel.index = 0;
 
   slides.forEach((img, index) => {
-    img.style.display = index === slideIndex ? "block" : "none";
+    img.style.display = index === carrossel.index ? "block" : "none";
   });
 
   captions.forEach((cap, index) => {
-    cap.style.display = index === slideIndex ? "block" : "none";
+    cap.style.display = index === carrossel.index ? "block" : "none";
   });
 }
 
-/* Inicializa carrossel */
+/* ✅ ALTERADO — inicializa TODOS os carrosséis */
 document.addEventListener("DOMContentLoaded", () => {
-  slide(0);
+  document.querySelectorAll(".carrossel").forEach(carrossel => {
+    const slides = carrossel.querySelectorAll("img");
+    const captions = carrossel.querySelectorAll("span");
+
+    slides.forEach((img, index) => {
+      img.style.display = index === 0 ? "block" : "none";
+    });
+
+    captions.forEach((cap, index) => {
+      cap.style.display = index === 0 ? "block" : "none";
+    });
+
+    carrossel.index = 0;
+  });
 });
 
 /* =========================
@@ -67,7 +95,6 @@ function tocarAudio(src) {
   audioAtual.loop = true;
   audioAtual.volume = 0.5;
 
-  /* Autoplay moderno exige interação prévia em alguns browsers */
   const playPromise = audioAtual.play();
 
   if (playPromise !== undefined) {
@@ -90,7 +117,6 @@ window.addEventListener("beforeunload", () => {
     audioAtual.currentTime = 0;
   }
 });
-
 let lugares = {
   manaus: {
     fotos: [
